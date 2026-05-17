@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #f5f4f0;
+    color: #1a1a18;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-3xl border border-stone-100 shadow-sm;
+  }
+
+  .btn-dark {
+    @apply bg-stone-900 text-white rounded-full px-5 py-2.5 text-sm font-medium
+           hover:bg-stone-800 active:scale-95 transition-all duration-150 cursor-pointer;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent border border-stone-200 text-stone-700 rounded-full px-4 py-2 text-sm
+           hover:bg-stone-50 active:scale-95 transition-all duration-150 cursor-pointer;
+  }
+
+  .nav-link {
+    @apply text-stone-500 text-sm font-medium hover:text-stone-900 transition-colors duration-150 cursor-pointer relative pb-1;
+  }
+
+  .nav-link.active {
+    @apply text-stone-900;
+  }
+
+  .nav-link.active::after {
+    content: '';
+    @apply absolute bottom-0 left-0 right-0 h-0.5 bg-stone-900 rounded-full;
+  }
+
+  .animate-delayed-1 { animation-delay: 0.05s; opacity: 0; }
+  .animate-delayed-2 { animation-delay: 0.1s; opacity: 0; }
+  .animate-delayed-3 { animation-delay: 0.15s; opacity: 0; }
+  .animate-delayed-4 { animation-delay: 0.2s; opacity: 0; }
+  .animate-delayed-5 { animation-delay: 0.25s; opacity: 0; }
+  .animate-delayed-6 { animation-delay: 0.3s; opacity: 0; }
+}
